@@ -43,7 +43,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Classify Image using ANN"
-        android:onClick="predictANN"
-        android:id="@+id/predict" />
+        android:onClick="predictANN" />
 
 </LinearLayout>
