@@ -156,10 +156,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void predictANN(View v){
         EditText imgPath = findViewById(R.id.imgPath);
-        Mat imgRGB = Imgcodecs.imread(imgPath.getText().toString());
+        Mat imgBGR = Imgcodecs.imread(imgPath.getText().toString());
 
         Mat imgHSV = new Mat();
-        Imgproc.cvtColor(imgRGB, imgHSV, Imgproc.COLOR_RGB2HSV);
+        Imgproc.cvtColor(imgBGR, imgHSV, Imgproc.COLOR_BGR2HSV);
 
         // Preparing parameters of Imgproc.calcHist().
         MatOfInt selectedChannels = new MatOfInt(0);
