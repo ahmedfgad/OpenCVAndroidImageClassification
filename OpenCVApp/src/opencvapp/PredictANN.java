@@ -37,14 +37,14 @@ public class PredictANN {
                     
                     String currImgPath = currClassDir + listOfFile.getName();
                     System.out.println(currImgPath);
-                    Mat imgRGB = Imgcodecs.imread(currImgPath);
-    //                int numRows = imgRGB.rows();
-    //                int numCols = imgRGB.cols();
-    //                int numChannels = imgRGB.channels();
+                    Mat imgBGR = Imgcodecs.imread(currImgPath);
+    //                int numRows = imgBGR.rows();
+    //                int numCols = imgBGR.cols();
+    //                int numChannels = imgRimgBGRGB.channels();
     //                System.out.println("Image Size : (" + numRows + ", " + numCols + ", " + numChannels + ")");
 
                     Mat imgHSV = new Mat();
-                    Imgproc.cvtColor(imgRGB, imgHSV, Imgproc.COLOR_RGB2HSV);
+                    Imgproc.cvtColor(imgBGR, imgHSV, Imgproc.COLOR_BGR2HSV);
 
                     // Preparing parameters of Imgproc.calcHist().
                     MatOfInt selectedChannels = new MatOfInt(0);
